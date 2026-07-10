@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Crosshair Studio</string>
+    <string name="by_author">by @ShivamMaurya09</string>
+    <string name="tab_modify">MODIFY</string>
+    <string name="tab_presets">PRESETS</string>
+    <string name="telegram_link">https://t.me/ShivamMaurya09</string>
+    <string name="live_code_title">LIVE CODE</string>
+    <string name="color_label">COLOR</string>
+    <string name="telegram_btn">TELEGRAM  @ShivamMaurya09</string>
+</resources>

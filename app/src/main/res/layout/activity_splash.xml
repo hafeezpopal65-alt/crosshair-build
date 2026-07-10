@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <!-- Top accent line -->
+    <View
+        android:id="@+id/topAccentLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/accent_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/splashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CROSSHAIR\nSTUDIO"
+        android:textColor="@color/text_primary"
+        android:textSize="36sp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:lineSpacingMultiplier="1.1"
+        app:layout_constraintBottom_toTopOf="@id/splashSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42"/>
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/splashSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRECISION  ·  CONTROL  ·  DESIGN"
+        android:textColor="@color/text_dim"
+        android:textSize="10sp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.2"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/splashTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/progressTrack"/>
+
+    <!-- Progress Track -->
+    <View
+        android:id="@+id/progressTrack"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_progress_track"
+        app:layout_constraintTop_toBottomOf="@id/splashSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/splashPercent"/>
+
+    <!-- Progress Bar -->
+    <View
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/bg_progress_bar"
+        app:layout_constraintTop_toTopOf="@id/progressTrack"
+        app:layout_constraintBottom_toBottomOf="@id/progressTrack"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Percent Label -->
+    <TextView
+        android:id="@+id/splashPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textColor="@color/text_dim"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/progressTrack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

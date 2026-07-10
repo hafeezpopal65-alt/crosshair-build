@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_main">
+
+    <!-- ── TOP BAR ── -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/panel_bg"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CROSSHAIR STUDIO"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="by @ShivamMaurya09"
+                android:textColor="@color/text_dim"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTelegram"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="TELEGRAM"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:backgroundTint="@color/accent_blue"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+
+    <!-- Blue accent bar under top bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/accent_blue"/>
+
+    <!-- ── LIVE CODE BAR ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/panel_bg"
+        android:paddingTop="6dp"
+        android:paddingBottom="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIVE CODE"
+            android:textColor="@color/text_dim"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.3"/>
+
+        <TextView
+            android:id="@+id/liveCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[ 0 · 90 · 180 · 270 ]"
+            android:textColor="@color/accent_cyan"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_color"/>
+
+    <!-- ── CANVAS ── -->
+    <com.shivam.crosshairstudio.CrosshairView
+        android:id="@+id/crosshairView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- ── BOTTOM PANEL ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/sidebar_bg">
+
+        <!-- Top blue border -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/accent_blue"/>
+
+        <!-- Tab bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:background="@color/panel_bg">
+
+            <TextView
+                android:id="@+id/tabModify"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="⚙  MODIFY"
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:background="@drawable/tab_selected_bg"
+                android:paddingBottom="2dp"/>
+
+            <TextView
+                android:id="@+id/tabPresets"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="☰  PRESETS"
+                android:gravity="center"
+                android:textColor="@color/text_dim"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+        <!-- Slider panel -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/panelModify"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/sidebar_bg">
+
+            <LinearLayout
+                android:id="@+id/sliderContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"/>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Preset list panel -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/panelPresets"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/sidebar_bg"
+            android:visibility="gone"
+            android:padding="8dp"/>
+
+        <!-- Color picker -->
+        <LinearLayout
+            android:id="@+id/colorBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/card_bg"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COLOR"
+                android:textColor="@color/text_dim"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.2"
+                android:layout_marginEnd="12dp"/>
+
+            <!-- Color dots added programmatically -->
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
